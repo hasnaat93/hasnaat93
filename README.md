@@ -33,6 +33,17 @@ A daily batch ELT pipeline that loads payment data into a dimensional warehouse 
 
 Built on synthetic data from a seeded simulator.
 
+### [Nightshift](https://github.com/hasnaat93/nightshift)
+
+A batch job scheduler built on PostgreSQL, with any number of nodes safely sharing one queue.
+
+- **Scheduling:** time-zone-aware cron, misfire policies, and job dependencies that run a chain in order.
+- **Reliability:** retries with exponential backoff, per-attempt timeouts, leases with a reaper for dead workers, and fenced updates so a stalled worker cannot overwrite newer results.
+- **Concurrency:** queue claiming with `FOR UPDATE SKIP LOCKED`, unique indexes and advisory locks. SQL is written by hand, without an ORM.
+- **Tests:** concurrency tests with real threads on a real PostgreSQL, including a killed worker and simultaneous upstream completions.
+
+The bundled jobs only simulate work.
+
 ## What I work with
 
 | | |
