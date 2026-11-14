@@ -8,7 +8,7 @@ I build the reporting, data pipelines and backend services behind payment system
 - Analytics engineering on the side: real-time data pipelines in Python and MongoDB.
 - BS Computer Science, University of Engineering and Technology (UET), Lahore.
 
-## Featured project
+## Featured projects
 
 ### [PayFlow Lab](https://github.com/hasnaat93/payflow-lab)
 
@@ -21,6 +21,17 @@ A simulated card payment operations platform: authorization, capture and refunds
 - **Tests:** unit and integration tests running against a real PostgreSQL.
 
 It is an educational simulator with synthetic data only. It is not a payment gateway.
+
+### [PayFlow Warehouse](https://github.com/hasnaat93/payflow-warehouse) · [live dashboard](https://hasnaat93.github.io/payflow-warehouse/)
+
+A daily batch ELT pipeline that loads payment data into a dimensional warehouse and serves BI-ready marts.
+
+- **Modeling:** star schema with an accumulating snapshot fact and a type 2 slowly changing merchant dimension.
+- **Pipeline:** raw, staging, warehouse and mart layers in plain SQL, orchestrated in Python as a task graph. Loads are idempotent and handle duplicates, late-arriving records and replays.
+- **Data quality:** bad rows are quarantined with a reason code, every delivered row is accounted for, and 22 checks gate each load. A failed check rolls the whole day back.
+- **BI:** mart views with CTEs and window functions, exported to Parquet and CSV, plus a static dashboard published by CI.
+
+Built on synthetic data from a seeded simulator.
 
 ## What I work with
 
