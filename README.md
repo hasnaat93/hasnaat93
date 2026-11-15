@@ -28,7 +28,7 @@ Real-time payment risk monitoring on Kafka Streams: the streaming project in the
 
 - **Event time:** four stateful rules judged on the time on each payment, looking at windows on both sides of it, so a burst is caught even when its payments arrive out of order.
 - **Reliability:** exactly-once processing with state rebuilt from changelog topics. CI runs it against a real Kafka broker, kills it, restarts it, and checks that no alert was written twice.
-- **Measured:** a labelled simulator scores every run (159 of 160 injected incidents caught, 0.43% of honest payments flagged). It also exposed a state design that did not scale, which was replaced.
+- **Measured:** a labelled simulator scores every run: 159 of 160 injected incidents caught, but also 64% of the alerts fell on honest payments, so the rules are not tuned. It also exposed a state design that did not scale, which was replaced.
 
 Built on simulated payments. The rules are explainable thresholds, not a fraud model.
 
