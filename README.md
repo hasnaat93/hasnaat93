@@ -22,6 +22,17 @@ A simulated card payment operations platform: authorization, capture and refunds
 
 It is an educational simulator with synthetic data only. It is not a payment gateway.
 
+### [FinSight Analytics](https://github.com/hasnaat93/finsight-analytics) · [live report preview](https://hasnaat93.github.io/finsight-analytics/)
+
+An end-to-end BI platform for a payment processor, from raw files to report.
+
+- **ETL:** a Python and SQL pipeline with rule-based validation, a quarantine for rejected rows, and source-to-target reconciliation on every load. Incremental and idempotent.
+- **Warehouse:** a PostgreSQL star schema with 8 dimensions (type 2 merchant history) and 5 facts, including settlements reconciled against what the warehouse expects.
+- **Semantic model:** a Power BI project in TMDL with 50 documented DAX measures, a time-intelligence calculation group, hierarchies and row-level security.
+- **SQL:** window functions, CTEs, `GROUPING SETS`, cohort retention, and measured index and materialized view effects.
+
+Built on synthetic data. The web preview is live; the Power BI report pages are specified but not yet built.
+
 ### [PayFlow Warehouse](https://github.com/hasnaat93/payflow-warehouse) · [live dashboard](https://hasnaat93.github.io/payflow-warehouse/)
 
 A daily batch ELT pipeline that loads payment data into a dimensional warehouse and serves BI-ready marts.
